@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gptGray-50: #f7f7f8;
+  --color-gptGray-100: #ececf1;
+  --color-gptGray-200: #d9d9e3;
+  --color-gptGray-300: #c5c5d2;
+  --color-gptGray-400: #acacbe;
+  --color-gptGray-500: #8e8ea0;
+  --color-gptGray-600: #565869;
+  --color-gptGray-700: #40414f;
+  --color-gptGray-800: #343541;
+  --color-gptGray-900: #202123;
+}
+
+@layer base {
+  body {
+    @apply bg-gptGray-800 text-gray-100 antialiased;
+  }
+}
+
+/* Custom scrollbar for chat window */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Markdown Styles */
+.prose pre {
+  @apply bg-gptGray-900 rounded-md p-4 overflow-x-auto my-4;
+}
+.prose code {
+  @apply bg-gptGray-900 px-1 py-0.5 rounded text-sm font-mono text-gray-200;
+}
+.prose pre code {
+  @apply bg-transparent p-0 text-sm;
+}
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+.prose p:last-child {
+  @apply mb-0;
+}
+.prose ul {
+  @apply list-disc list-inside mb-4;
+}
+.prose ol {
+  @apply list-decimal list-inside mb-4;
+}
+.prose a {
+  @apply text-blue-400 hover:underline;
+}
